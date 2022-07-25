@@ -1,7 +1,7 @@
 import requests
 from twilio.rest import Client
 
-from env import STOCK_API_KEY, NEWS_API_KEY, TWILIO_SID_TOKEN, TWILIO_AUTH_TOKEN
+from env import STOCK_API_KEY, NEWS_API_KEY, TWILIO_SID_TOKEN, TWILIO_AUTH_TOKEN, NUMBER
 
 STOCK_NAME = "TSLA"
 COMPANY_NAME = "Tesla Inc"
@@ -81,7 +81,7 @@ for article in formatted_articles:
     message = client.messages.create(
         body=article,
         from_="+16602102865",
-        to="7862014285"
+        to=NUMBER
     )
 
     # Optional TODO: Format the message like this:
